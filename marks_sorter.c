@@ -40,5 +40,30 @@ int main()
         printf("%d ",marks[m]);
     }
     printf("\n");
+    printf("input the marks of student to be searched: ");
+    int search_mark;
+    scanf("%d",&search_mark);
+    int found = 0,low = 0, high = 5-1;
+    while(low<=high)
+    {
+        int mid = (low + high)/2;
+        if(marks[mid]==search_mark)
+        {
+            found=search_mark;
+            break;
+        }
+        else if(marks[mid]<search_mark)
+        {
+            low = mid+1;
+        }
+        else
+        {
+            high = mid-1;
+        }
+    }
+    if(found!=0)
+    printf("the mark have been found: %d",found);
+    else
+    printf("the mark was not found !");
     return 0;
 }
