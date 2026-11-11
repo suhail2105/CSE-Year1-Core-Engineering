@@ -6,9 +6,12 @@ int main(){
     printf("\n========INTEGER TO ROMAN========\n");
     printf("Input a number to convert it to roman number: ");
     int n;
-    scanf("%d",&n);
-    if(n<1){
-        printf("invalid number !! try again");
+    if(scanf("%d",&n)!=1){
+        printf("This is not an integer !");
+        exit(1);
+    }
+    if(n<1 || n>3999){
+        printf("ERROR ! please enter a number between 1-3999");
         exit(1);
     }
     for(int i=0; i<13; i++){
@@ -17,5 +20,6 @@ int main(){
         n-=values[i];
         }
     }
+    printf("\n");
     return 0;
 }
